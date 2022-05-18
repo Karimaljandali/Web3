@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'PumpkinKing';
+    src: url('/fonts/PumpkinKing.woff2') format('woff2'),
+        url('/fonts/PumpkinKing.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  .font-pumpkin {
+    font-family: PumpkinKing;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  

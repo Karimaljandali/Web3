@@ -14,7 +14,7 @@ export default function Header({ switchNetwork }) {
 
   const checkIfWalletIsConnected = async () => {
     const { ethereum } = window;
-    if (!ethereum) return alert("Please install metamask");
+    if (!ethereum) return;
 
     const accounts = await ethereum.request({ method: "eth_accounts" });
     if ( accounts != '') {
@@ -25,7 +25,7 @@ export default function Header({ switchNetwork }) {
   const connectWallet = async () => {
     try {
       const { ethereum } = window;
-      if (!ethereum) return alert("Please install metamask");
+      if (!ethereum) return alert('Please install metamask');
 
       const accounts = await ethereum.request({
         method: "eth_requestAccounts",

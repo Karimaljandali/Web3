@@ -102,18 +102,20 @@ export default function Home() {
    */
   useEffect(() => {
     const { ethereum } = window;
-    const provider = new ethers.providers.Web3Provider(ethereum);
-    const signer = provider.getSigner();
+    if( ethereum ){
+      const provider = new ethers.providers.Web3Provider(ethereum);
+      const signer = provider.getSigner();
 
-    const localContract = new ethers.Contract(
-      contractAddress,
-      kLoot.abi,
-      signer
-    );
-    setContract(localContract);
-    // Wait a second before checking minted
+      const localContract = new ethers.Contract(
+        contractAddress,
+        kLoot.abi,
+        signer
+      );
+      setContract(localContract);
+      // Wait a second before checking minted
 
-    setTimeout(() => {}, 1000);
+      setTimeout(() => {}, 1000);
+    }
   }, []);
 
   /**
